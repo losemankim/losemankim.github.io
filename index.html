@@ -25,7 +25,6 @@
             opacity: 0;
             animation: fade-in 2s ease forwards;
         }
-
         @keyframes fade-in {
             0% {
                 opacity: 0;
@@ -34,34 +33,17 @@
                 opacity: 1;
             }
         }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var strings = [
-                "안녕하세요, 제 이름은 김인호입니다.",
-                "저는 학생/정보보호학과로 공부하고 있습니다.",
-                "보안 전문가가 되기 위해 열심히 노력하고 있습니다.",
-                "컴퓨터 시스템의 취약점을 탐지하고 보호하는 것이 즐거움입니다."
-            ];
-
-            var container = document.createElement("div");
-            container.className = "centered";
-            document.body.appendChild(container);
-
-            function displayStrings() {
-                if (strings.length > 0) {
-                    var string = strings.shift();
-                    var paragraph = document.createElement("p");
-                    paragraph.textContent = string;
-                    container.appendChild(paragraph);
-                } else {
-                    clearInterval(interval);
-                }
+        
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
             }
-
-            var interval = setInterval(displayStrings, 2000);
-        });
-    </script>
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script src="a.js"></script>
 </head>
 <body>
 </body>
