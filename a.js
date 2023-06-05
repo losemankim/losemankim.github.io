@@ -21,13 +21,13 @@
             charIndex++;// 문자 인덱스 증가
           } else {// 문자 인덱스가 문자열의 길이보다 크거나 같으면
             clearInterval(typingEffect);// 타이핑 효과 제거
-            setTimeout(function() {// 2초 후에
-              paragraph.style.animation = " fade-in-out 2s ease forwards";// p 요소에 fade-out 애니메이션 효과 적용
+            {// 2초 후에
+              paragraph.style.animation = "fade-in-out 2s ease forwards";// p 요소에 fade-out 애니메이션 효과 적용
               setTimeout(function() {// 2초 후에
                 container.removeChild(paragraph);// p 요소를 container에서 제거
                 displayStrings();// displayStrings 함수 호출 재귀
               }, 2000);
-            }, 2000);
+            };
           }
         }, 100);
       } else {
