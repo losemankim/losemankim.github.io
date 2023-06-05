@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>자기소개</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .tooltip {
+            position: absolute;
+            display: none;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tooltipElement = document.createElement("div");
+            tooltipElement.className = "tooltip";
+            document.body.appendChild(tooltipElement);
+
+            var hoverElements = document.getElementsByClassName("hover-info");
+            Array.prototype.forEach.call(hoverElements, function(element) {
+                element.addEventListener("mousemove", function(event) {
+                    var tooltip = document.querySelector(".tooltip");
+                    tooltip.style.left = (event.pageX + 10) + "px";
+                    tooltip.style.top = (event.pageY + 10) + "px";
+                    tooltip.textContent = element.getAttribute("data-info");
+                    tooltip.style.display = "block";
+                });
+
+                element.addEventListener("mouseout", function() {
+                    var tooltip = document.querySelector(".tooltip");
+                    tooltip.style.display = "none";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>안녕하세요, 제 이름은 김인호입니다.</h1>
+    <p>저는 학생/정보보호학과로 공부하고 있습니다.</p>
+    <p class="hover-info" data-info="보안 전문가가 되기 위해 열심히 노력하고 있습니다.">마우스를 올려보세요.</p>
+    <p class="hover-info" data-info="컴퓨터 시스템의 취약점을 탐지하고 보호하는 것이 즐거움입니다.">마우스를 올려보세요.</p>
+</body>
+</html>
