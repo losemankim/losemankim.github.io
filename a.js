@@ -21,7 +21,7 @@
             index++;
 
             setTimeout(function() {
-                paragraph.style.animation = "fade-out 2s ease forwards";
+                paragraph.style.opacity = "0";
                 setTimeout(function() {
                     container.removeChild(paragraph);
                     displayNextString();
