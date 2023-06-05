@@ -17,7 +17,7 @@
         var charIndex = 0; // 문자 인덱스 초기화
         var typingEffect = setInterval(function() { // 2000ms 마다 함수 호출
           if (charIndex < string.length) { // 문자 인덱스가 문자열의 길이보다 작으면
-            paragraph.textContent += string.charAt(charIndex); // p 요소에 문자열의 문자를 추가
+            // paragraph.textContent += string.charAt(charIndex); // p 요소에 문자열의 문자를 추가
             charIndex++;// 문자 인덱스 증가
           } else {// 문자 인덱스가 문자열의 길이보다 크거나 같으면
             clearInterval(typingEffect);// 타이핑 효과 제거
