@@ -12,7 +12,7 @@ function typeIntroText() {
         if (index >= introText.length) {
             clearInterval(timer);
         }
-    }, 100);
+    }, 10);
 }
 
 // 페이지 로딩 시 소개글 한 글자씩 표시
