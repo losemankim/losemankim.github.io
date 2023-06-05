@@ -11,46 +11,30 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-    }
-    .centered p:nth-child(odd) {
-      animation-name: fade-in;
-    }
-
-    .centered p:nth-child(even) {
-      animation-name: fade-out;
-    }
-
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fade-out {
-      0% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-    }
-    .centered p {
+      
+    }.centered p {
         opacity: 0;
         animation-fill-mode: forwards;
         animation-duration: 2s;
         animation-timing-function: ease;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        animation-name: fade-in-out;
       }
+      
+      @keyframes fade-in-out {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+      
       
   </style>
 </head>
