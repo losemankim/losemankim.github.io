@@ -26,7 +26,7 @@
               setTimeout(function() {// 2초 후에
                 container.removeChild(paragraph);// p 요소를 container에서 제거
                 displayStrings();// displayStrings 함수 호출 재귀
-              }, 2000);
+              }, 10000);
             };
           }
         }, 100);
