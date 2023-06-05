@@ -10,19 +10,25 @@
     container.className = "centered";
     document.body.appendChild(container);
 
-    function displayStrings() {
-        if (strings.length > 0) {
-            var string = strings.shift();
+    var index = 0;
+
+    function displayNextString() {
+        if (index < strings.length) {
+            var string = strings[index];
             var paragraph = document.createElement("p");
             paragraph.textContent = string;
             container.appendChild(paragraph);
+            index++;
+
             setTimeout(function() {
                 paragraph.style.animation = "fade-out 2s ease forwards";
-            }, 1000);
-        } else {
-            clearInterval(interval);
+                setTimeout(function() {
+                    container.removeChild(paragraph);
+                    displayNextString();
+                }, 2000);
+            }, 2000);
         }
     }
 
-    var interval = setInterval(displayStrings, 4000);
+    displayNextString();
 });
